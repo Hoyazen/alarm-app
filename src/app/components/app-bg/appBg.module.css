@@ -1,0 +1,12 @@
+.app {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.appDark {
+    background-color: var(--bg-dark-color);
+}
+
+.appLight {
+    background-color: var(--bg-light-color);
+}

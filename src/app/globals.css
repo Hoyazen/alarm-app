@@ -3,3 +3,32 @@
   padding: 0;
   margin: 0;
 }
+
+:root {
+
+  /*colors*/
+  --bg-light-color: #ffe3b3;
+  --border-light-color: #fbb931;
+  --main-light-color: #f88f22;
+  --icon-light-color: #ea6113;
+  --select-light-color: #ffeed2;
+  --bg-dark-color: #1c1c2d;
+  --border-dark-color: #5b5e7a;
+  --main-dark-color: #a8b2d1;
+  --icon-dark-color: #e0e0e0;
+  --select-dark-color: #12121d;
+
+  /*font*/
+  --font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: var(--font-family);
+}
