@@ -13,3 +13,18 @@
 .backgroundLight {
     background-color: var(--bg-light-color);
 }
+
+.cloud {
+    position: absolute;
+    width: 40%;
+    bottom: 0;
+    right: 500px;
+}
+
+.cloudLight {
+    fill: var(--main-light-color);
+}
+
+.cloudDark {
+    fill: var(--main-dark-color);
+}
