@@ -32,3 +32,8 @@ p,
 a {
   font-family: var(--font-family);
 }
+
+button {
+  background: none;
+  border: none;
+}

@@ -10,10 +10,6 @@ import styles from "./appBg.module.css"
 function Background() {
     const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
-    function handleToggleThemeClick() {
-        toggleDarkMode()
-    }
-
     return (
         <div className={darkMode ? `${styles.app} ${styles.appDark}` : `${styles.app} ${styles.appLight}`}>
             <DarkModeButton />

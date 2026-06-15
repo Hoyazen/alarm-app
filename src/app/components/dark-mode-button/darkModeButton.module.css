@@ -1,18 +1,22 @@
 .lightButton {
-    position: absolute;
-    right: 0;
-    top: 0;
     fill: var(--icon-light-color);
-    width: 80px;
-    height: 80px;
 }
 
 .darkButton {
-    display: none;
+    fill: var(--icon-dark-color);
+}
+
+.buttonMode {
     position: absolute;
+    cursor: pointer;
     right: 0;
     top: 0;
-    fill: var(--icon-dark-color);
     width: 80px;
     height: 80px;
+    transition: all 0.3s ease-in-out;
+}
+
+.buttonMode:hover {
+    width: 90px;
+    height: 90px;
 }
