@@ -1,3 +1,5 @@
+"use client";
+
 import { useContext } from 'react';
 import { DarkModeContext } from '@/app/context/DarkModeProvider';
 import styles from './darkModeButton.module.css';

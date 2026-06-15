@@ -1,12 +1,15 @@
-.app {
+.background {
+    z-index: -1;
+    position: absolute;
     height: 100vh;
+    width: 100%;
     overflow: hidden;
 }
 
-.appDark {
+.backgroundDark {
     background-color: var(--bg-dark-color);
 }
 
-.appLight {
+.backgroundLight {
     background-color: var(--bg-light-color);
 }
