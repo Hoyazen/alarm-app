@@ -1,0 +1,40 @@
+.clockContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.time {
+    font-size: 72px;
+    font-weight: 800;
+}
+
+.timeLight {
+    color: var(--main-light-color);
+}
+
+.timeDark {
+    color: var(--main-dark-color);
+}
+
+.clock {
+    width: 500px;
+    height: 500px;
+}
+
+.clockOutsideLight {
+    fill: var(--border-light-color);
+}
+
+.clockOutsideDark {
+    fill: var(--border-dark-color);
+}
+
+.clockInsideLight {
+    fill: var(--main-light-color);
+}
+
+.clockInsideDark {
+    fill: var(--main-dark-color);
+}
