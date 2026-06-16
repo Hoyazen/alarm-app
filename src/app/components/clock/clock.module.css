@@ -38,3 +38,18 @@
 .clockInsideDark {
     fill: var(--main-dark-color);
 }
+
+@media (max-width: 1280px) {
+    .clockContainer {
+        order: 1;
+    }
+
+    .time {
+        font-size: 54px;
+    }
+
+    .clock {
+        width: 200px;
+        height: 200px;
+    }
+}

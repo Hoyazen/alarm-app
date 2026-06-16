@@ -10,14 +10,15 @@ export default function Home() {
   return (
     <main>
       <DarkModeProvider>
-        <Background />
-        <div className={styles.app}>
-          <DarkModeButton />
-          <SongsList />
-          <Clock />
-          <Buttons />
-        </div>
+        <Background>
+          <div className={styles.app}>
+            <DarkModeButton />
+            <SongsList />
+            <Clock />
+            <Buttons />
+          </div>
+        </Background>
       </DarkModeProvider>
-    </main>
+    </main >
   );
 }

@@ -1,9 +1,17 @@
 .app {
-    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     padding: 80px;
+}
+
+@media (max-width: 1280px) {
+    .app {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px;
+        gap: 40px;
+    }
 }

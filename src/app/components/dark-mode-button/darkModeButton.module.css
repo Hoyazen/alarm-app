@@ -19,3 +19,28 @@
 .darkButton {
     fill: var(--icon-dark-color);
 }
+
+@media (max-width: 1280px) {
+    .buttonMode {
+        position: fixed;
+        top: 40px;
+        right: 40px;
+    }
+
+    .buttonMode:hover {
+        top: 37px;
+    }
+}
+
+@media (max-width: 480px) {
+    .buttonMode {
+        width: 60px;
+        height: 60px;
+        top: 20px;
+        right: 20px;
+    }
+
+    .buttonMode:hover {
+        top: 17px;
+    }
+}

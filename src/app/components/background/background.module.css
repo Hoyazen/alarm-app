@@ -1,9 +1,9 @@
+/*les 100vh pour le format pc et on passe sur 100% en mobile sinon y'a un bug de hauteur*/
 .background {
-    z-index: -1;
-    position: absolute;
+    position: relative;
+    z-index: 1;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
 }
 
 .backgroundDark {
@@ -15,6 +15,7 @@
 }
 
 .cloud {
+    z-index: -1;
     position: absolute;
     width: 40%;
     bottom: 0;
@@ -27,4 +28,14 @@
 
 .cloudDark {
     fill: var(--main-dark-color);
+}
+
+@media (max-width: 1280px) {
+    .background {
+        height: 100%;
+    }
+
+    .cloud {
+        display: none;
+    }
 }

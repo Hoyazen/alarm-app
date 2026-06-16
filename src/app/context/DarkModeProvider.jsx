@@ -14,11 +14,9 @@ function DarkModeProvider(props) {
 
     //value = chaque enfant peut réutiliser ce composant
     return (
-        <div>
-            <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
-                {props.children}
-            </DarkModeContext.Provider>
-        </div>
+        <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
+            {props.children}
+        </DarkModeContext.Provider>
     )
 };
 
