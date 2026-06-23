@@ -24,14 +24,22 @@ export default function TimerProvider({ endFunction, children }) {
                 if (prev <= 1) {
                     clearInterval(intervalRef.current);
                     intervalRef.current = null;
-                    // appel de la fonction de fin fournie par le composant parent
-                    endFunction();
                     return 0;
                 }
                 return prev - 1;
             });
         }, 1000);
     };
+
+    /**
+     * useEffect qui se déclenchera en cas de modification de "secondsLeft"
+     */
+    useEffect(() => {
+        // appel de la fonction de fin fournie par le composant parent
+        if (secondsLeft < 1) {
+            endFunction();
+        }
+    }, [secondsLeft]);
 
     const pause = () => {
         clearInterval(intervalRef.current);
