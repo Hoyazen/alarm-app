@@ -1,3 +1,5 @@
+"use client";
+
 import { DarkModeProvider } from './context/DarkModeProvider';
 import Background from './components/background/background';
 import DarkModeButton from './components/dark-mode-button/darkModeButton';
@@ -8,6 +10,20 @@ import Buttons from './components/buttons/buttons';
 import TimerProvider from './context/TimerProvider';
 
 export default function Home() {
+  
+  /**
+   * Démarre le son du réveil.
+   * A pour objectif d'ête appelée par TimerProvider.
+   */
+  function startSound() {
+    const audio = new Audio('/sound/reggaeton-reggae.mp3');
+
+    audio.play();
+  }
+  
+  // version en fonction flêchée anonyme
+  // const startSound = () => {}
+
   return (
     <main>
       <DarkModeProvider>
@@ -15,7 +31,7 @@ export default function Home() {
           <div className={styles.app}>
             <DarkModeButton />
             <SongsList />
-            <TimerProvider>
+            <TimerProvider endFunction={startSound}>
               <Clock />
               <Buttons />
             </TimerProvider>

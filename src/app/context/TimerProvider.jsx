@@ -4,10 +4,15 @@ import { createContext, useState, useRef, useEffect } from "react";
 
 export const TimerContext = createContext();
 
-export default function TimerProvider({ children }) {
+/**
+ * Contexte qui gère le temps.
+ * 
+ * Attention, "endFunction" doit être fournie par le composant parent pour déclencher une action à la fin du timer.
+ */
+export default function TimerProvider({ endFunction, children }) {
 
-    const [totalSeconds, setTotalSeconds] = useState(1800);
-    const [secondsLeft, setSecondsLeft] = useState(1800);
+    const [totalSeconds, setTotalSeconds] = useState(3);
+    const [secondsLeft, setSecondsLeft] = useState(3);
 
     const intervalRef = useRef(null);
 
@@ -19,6 +24,8 @@ export default function TimerProvider({ children }) {
                 if (prev <= 1) {
                     clearInterval(intervalRef.current);
                     intervalRef.current = null;
+                    // appel de la fonction de fin fournie par le composant parent
+                    endFunction();
                     return 0;
                 }
                 return prev - 1;
