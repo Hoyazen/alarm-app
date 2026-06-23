@@ -5,6 +5,7 @@ import styles from './page.module.css';
 import SongsList from './components/songs-list/songsList';
 import Clock from './components/clock/clock';
 import Buttons from './components/buttons/buttons';
+import TimerProvider from './context/TimerProvider';
 
 export default function Home() {
   return (
@@ -14,8 +15,10 @@ export default function Home() {
           <div className={styles.app}>
             <DarkModeButton />
             <SongsList />
-            <Clock />
-            <Buttons />
+            <TimerProvider>
+              <Clock />
+              <Buttons />
+            </TimerProvider>
           </div>
         </Background>
       </DarkModeProvider>
