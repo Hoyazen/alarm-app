@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { DarkModeProvider } from './context/DarkModeProvider';
 import Background from './components/background/background';
 import DarkModeButton from './components/dark-mode-button/darkModeButton';
@@ -33,6 +33,8 @@ const songs = [
 
 export default function Home() {
 
+  const audioRef = useRef(null);
+
   /**
    * Moreau sélectionné, va être utilisé pour l'alarme.
    * 
@@ -49,7 +51,7 @@ export default function Home() {
    * State de sonnerie
    */
   const [alarmOn, setAlarmOn] = useState(false);
-  
+
   // Code de test de changement du morceau sélectionné
   // uniquement pour tester
   // useEffect(() => {
@@ -66,14 +68,22 @@ export default function Home() {
    */
   function startSound() {
     if (selectedSong != null) {
-      // création d'un objet Audio
-      const audio = new Audio(`sound/${selectedSong["song_file_name"]}`);
+      audioRef.current = new Audio(`sound/${selectedSong["song_file_name"]}`);
+
       setAlarmOn(true);
-      // play de l'audio
-      audio.play();
+      audioRef.current.play();
     }
   }
-  
+
+  function stopSound() {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+
+    setAlarmOn(false);
+  }
+
   // version en fonction flêchée anonyme
   // const startSound = () => {}
 
@@ -83,14 +93,13 @@ export default function Home() {
         <Background>
           <div className={styles.app}>
             <DarkModeButton />
-            <SongsList songs={songs} setSelectedSong={setSelectedSong}/>
+            <SongsList songs={songs} setSelectedSong={setSelectedSong} />
             <TimerProvider endFunction={startSound}>
               <Clock />
-              {
-                // si alarmOn alors on affiche le bouton stop alarm
-                // sinon le set de boutons de réglage du timer
-                alarmOn ? <button onClick={() => { /* TODO arrêter audio */ }}>TODO</button> : <Buttons />
-              }
+              <Buttons
+                alarmOn={alarmOn}
+                stopSound={stopSound}
+              />
             </TimerProvider>
           </div>
         </Background>
