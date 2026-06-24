@@ -41,6 +41,7 @@ jobs:
       - name: Upload des artefacts de build
         uses: actions/upload-artifact@v7
         with:
+          name: out
           path: out/ # le dossier  "out" est générer lors de la compilation en CSR
           retention-days: 7
   # 2. Déploiement
