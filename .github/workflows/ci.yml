@@ -36,7 +36,7 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
-          NEXT_PUBLIC_BASE_PATH: /taxi/
+          NEXT_PUBLIC_BASE_PATH: /alarm-app/
 
       - name: Upload des artefacts de build
         uses: actions/upload-artifact@v7
