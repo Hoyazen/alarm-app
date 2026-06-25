@@ -16,20 +16,20 @@ const songs = [
   {
     "name": "Reggeaton",
     "artist": "Random",
-    "song_file_name": `${basePath}reggaeton-reggae.mp3`,
-    "img_file_name": `${basePath}album.jpg`
+    "song_file_name": "reggaeton-reggae.mp3",
+    "img_file_name": "album.jpg"
   },
   {
     "name": "La merguez party",
     "artist": "Les musclés",
-    "song_file_name": `${basePath}reggaeton-reggae.mp3`,
-    "img_file_name": `${basePath}album.jpg`
+    "song_file_name": "reggaeton-reggae.mp3",
+    "img_file_name": "album.jpg"
   },
   {
     "name": "Un super morceau",
     "artist": "On sait pas",
-    "song_file_name": `${basePath}reggaeton-reggae.mp3`,
-    "img_file_name": `${basePath}album.jpg`
+    "song_file_name": "reggaeton-reggae.mp3",
+    "img_file_name": "album.jpg"
   }
 ];
 
@@ -70,7 +70,7 @@ export default function Home() {
    */
   function startSound() {
     if (selectedSong != null) {
-      audioRef.current = new Audio(`sound/${selectedSong["song_file_name"]}`);
+      audioRef.current = new Audio(`${basePath}/sound/${selectedSong["song_file_name"]}`);
 
       setAlarmOn(true);
       audioRef.current.play();
