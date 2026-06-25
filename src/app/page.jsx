@@ -10,24 +10,26 @@ import Clock from './components/clock/clock';
 import Buttons from './components/buttons/buttons';
 import TimerProvider from './context/TimerProvider';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 const songs = [
   {
     "name": "Reggeaton",
     "artist": "Random",
-    "song_file_name": "reggaeton-reggae.mp3",
-    "img_file_name": "album.jpg"
+    "song_file_name": `${basePath}reggaeton-reggae.mp3`,
+    "img_file_name": `${basePath}album.jpg`
   },
   {
     "name": "La merguez party",
     "artist": "Les musclés",
-    "song_file_name": "reggaeton-reggae.mp3",
-    "img_file_name": "album.jpg"
+    "song_file_name": `${basePath}reggaeton-reggae.mp3`,
+    "img_file_name": `${basePath}album.jpg`
   },
   {
     "name": "Un super morceau",
     "artist": "On sait pas",
-    "song_file_name": "reggaeton-reggae.mp3",
-    "img_file_name": "album.jpg"
+    "song_file_name": `${basePath}reggaeton-reggae.mp3`,
+    "img_file_name": `${basePath}album.jpg`
   }
 ];
 
